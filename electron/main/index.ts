@@ -2,7 +2,7 @@ import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
 
-import { GegArticleContent } from '../model/openai'
+import { GetData } from '../model/openai'
 
 // The built directory structure
 //
@@ -153,10 +153,15 @@ ipcMain.on('window-close', function () {
     }
 })
 
-ipcMain.on('article-content', function (event, arg) {
+ipcMain.on('article-content', async function (event, arg) {
     console.log(arg)
     // apiKey: string, prompt: string, model: string = 'text-davinci-003', temperature: number = 0, max_tokens: number = 7
-    GegArticleContent(arg.apiKey, arg.prompt, arg.model, arg.temperature, arg.max_tokens, (err, res) => {
-        event.reply('article-content-reply', { err, res })
+    // GegArticleContent(arg.apiKey, arg.prompt, arg.model, arg.temperature, arg.max_tokens, arg.proxy, (err, res) => {
+    //     event.reply('article-content-reply', { err, res })
+    // })
+    let body = await GetData(arg.apiKey, arg.prompt, arg.model, arg.temperature, arg.max_tokens).catch(err => {
+        console.log(err)
+        return JSON.stringify({ code: 500, msg: err })
     })
+    event.reply('article-content-reply', { body })
 })

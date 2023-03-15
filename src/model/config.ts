@@ -36,10 +36,10 @@ export function GetConfig() {
     return {
         apiKey: config.apiKey || '',
         prompt: config.prompt || '',
-        model: config.model || 'text-davinci-003',
+        model: config.model || 1,
         temperature: config.temperature || 0.6,
         max_tokens: config.max_tokens || 300,
-
+        proxy: config.proxy || '',
     }
 }
 
@@ -67,4 +67,5 @@ export function initialization() {
     config.model = data.model
     config.temperature = data.temperature
     config.max_tokens = data.max_tokens
+    config.proxy = data.proxy
 }

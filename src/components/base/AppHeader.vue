@@ -13,8 +13,8 @@ function handleClose() {
 </script>
 <template>
     <div class="title-bar">
-        <div class="title-bar-dragger"> <el-avatar class="logo" :size="24">文</el-avatar>
-            <span>OpenAI 文章生成器 By:小莫</span>
+        <div class="title-bar-dragger"> <el-avatar class="logo" :size="35" src="favicon.ico">SEO</el-avatar>
+            <span>智能SEO助手 By:小莫</span>
         </div>
         <div class="window-actions">
             <li @click="handleMinimize" title="最小化窗口">

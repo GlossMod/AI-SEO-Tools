@@ -9,6 +9,11 @@ let apiKey = computed({
     set: (value) => config.setApiKey(value)
 })
 
+let proxy = computed({
+    get: () => config.proxy,
+    set: (value) => config.setProxy(value)
+})
+
 </script>
 <template>
     <div class="Configuration">
@@ -16,6 +21,10 @@ let apiKey = computed({
         <el-form-item label="API keys">
             <el-input v-model="apiKey" />
         </el-form-item>
+        <!-- <div class="h3-title">代理配置</div>
+            <el-form-item label="代理地址" class="w-50 m-2">
+                <el-input v-model="proxy" />
+            </el-form-item> -->
     </div>
 </template>
 <script lang='ts'>
@@ -24,6 +33,4 @@ export default {
     name: 'Configuration',
 }
 </script>
-<style lang='less' scoped>
-
-</style>
+<style lang='less' scoped></style>

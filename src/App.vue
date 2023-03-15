@@ -12,7 +12,7 @@ initialization()
         <AppHeader></AppHeader>
         <div class="main common-layout">
             <el-container>
-                <el-aside width="200px">
+                <el-aside width="130px">
                     <LeftMenu></LeftMenu>
                 </el-aside>
                 <el-main>

@@ -1,5 +1,5 @@
 {
-  "name": "openai-electron",
+  "name": "seo_ai_tools",
   "version": "1.0.0",
   "main": "dist-electron/main/index.js",
   "description": "Really simple Electron + Vue + Vite boilerplate.",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@types/marked": "^4.0.8",
+    "@types/request": "^2.48.8",
     "@vitejs/plugin-vue": "^4.0.0",
     "electron": "^22.0.3",
     "electron-builder": "^23.6.0",
@@ -43,6 +44,8 @@
     "combined-stream": "^1.0.8",
     "delayed-stream": "^1.0.0",
     "element-plus": "^2.2.29",
+    "esbuild": "^0.17.11",
+    "extend": "^3.0.2",
     "follow-redirects": "^1.15.2",
     "form-data": "^4.0.0",
     "github-markdown-css": "^5.1.0",
@@ -50,6 +53,16 @@
     "mime-types": "^2.1.35",
     "openai": "^3.1.0",
     "pinia": "^2.0.30",
-    "proxy-from-env": "^1.1.0"
+    "proxy-from-env": "^1.1.0",
+    "psl": "^1.9.0",
+    "punycode": "^2.3.0",
+    "querystringify": "^2.2.0",
+    "request": "^2.88.2",
+    "requires-port": "^1.0.0",
+    "tough-cookie": "^4.1.2",
+    "tunnel-agent": "^0.6.0",
+    "universalify": "^2.0.0",
+    "url-parse": "^1.5.10",
+    "uuid": "^9.0.0"
   }
 }

@@ -1,0 +1,8 @@
+{
+	"apiKey": "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",
+	"prompt": "伺服端是什么",
+	"model": "1",
+	"temperature": 0.8,
+	"max_tokens": 2048,
+	"proxy": "http://127.0.0.1:10809"
+}

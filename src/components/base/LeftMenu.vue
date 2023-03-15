@@ -16,13 +16,13 @@ import {
                     <el-icon>
                         <Position />
                     </el-icon>
-                    <span>生成文章</span>
+                    <span>首页</span>
                 </el-menu-item>
                 <el-menu-item index="/configuration">
                     <el-icon>
                         <Operation />
                     </el-icon>
-                    <span>接口配置</span>
+                    <span>设置</span>
                 </el-menu-item>
                 <el-menu-item index="/about">
                     <el-icon>
