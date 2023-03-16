@@ -1,30 +1,24 @@
 import { join } from 'node:path'
-import { readFileSync, writeFile } from 'node:fs'
+import { homedir } from "os";
+import { readFileSync, writeFile, existsSync, writeFileSync, mkdirSync } from 'node:fs'
 import { useConfig } from '@src/stores/useConfig'
-import { el } from 'element-plus/es/locale'
 
 const configFile = function () {
     let configPath = 'config.json'
-    if (process.env.NODE_ENV === 'development') {
-        // 开发环境
-        let publicPath = join(process.env.DIST_ELECTRON || '', '../public')
-        configPath = join(publicPath, 'config.json')
-    } else {
-        // 生产环境
-        configPath = join(process.resourcesPath, 'config.json')
+
+    const userProfile = homedir();
+
+    configPath = join(userProfile || 'C:', 'My Documents', 'SEOTools', configPath);
+
+    if (!existsSync(join(userProfile || 'C:', 'My Documents', 'SEOTools'))) {
+        mkdirSync(join(userProfile || 'C:', 'My Documents', 'SEOTools'));
     }
 
-    // 如果文件不存在则创建一个空文件
-    if (!readFileSync(configPath, 'utf-8')) {
-        writeFile(configPath, '', { encoding: 'utf-8', flag: 'w' }, function (err) {
-            if (err) {
-                console.log(err)
-            }
-        })
+    if (!existsSync(configPath)) {
+        writeFileSync(configPath, '{}', 'utf8');
     }
 
     return configPath
-
 }
 
 export function GetConfig() {

@@ -6,8 +6,12 @@ import { useConfig } from '@src/stores/useConfig'
 import { marked } from 'marked';
 import 'github-markdown-css/github-markdown-dark.css'
 
-const config = useConfig()
+marked.setOptions({
+    // 关闭html解析
+    sanitize: true,
+})
 
+const config = useConfig()
 
 let length = computed(() => {
     return config.content.length

@@ -1,8 +1,8 @@
-import request from "request";
+// import request from "request";
+import request from 'electron-request';
 
 
-export async function GegArticleContent(apiKey: string, prompt: string, model: string = '1', temperature: number = 0, max_tokens: number = 7, proxy: string = '',
-    callback: (err, res) => void) {
+export async function GegArticleContent(apiKey: string, prompt: string, model: string = '1', temperature: number = 0, max_tokens: number = 7) {
 
     let messages = []
 
@@ -60,22 +60,33 @@ export async function GegArticleContent(apiKey: string, prompt: string, model: s
         stop: null
     })
 
-    request({
-        url: 'https://api.openai.com/v1/chat/completions',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-        },
-        proxy: proxy, // 使用代理服务器
-        body: data
-    }, (err, res, body) => {
-        if (err) {
-            callback(err, null);
-        } else {
-            callback(null, body);
-        }
+    return new Promise<string>((resolve, reject) => {
+        request('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`,
+            },
+            body: data,
+        }).then(res => resolve(res.text())).catch(err => reject(err))
     })
+
+    // request({
+    //     url: 'https://api.openai.com/v1/chat/completions',
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Authorization': `Bearer ${apiKey}`,
+    //     },
+    //     proxy: proxy, // 使用代理服务器
+    //     body: data
+    // }, (err, res, body) => {
+    //     if (err) {
+    //         callback(err, null);
+    //     } else {
+    //         callback(null, body);
+    //     }
+    // })
 }
 
 
@@ -87,19 +98,12 @@ export async function GetData(apiKey: string, prompt: string, model: string = '1
     })
 
     return new Promise<string>((resolve, reject) => {
-        request({
-            url: 'http://42.192.204.130:3059/',
+        request('http://42.192.204.130:3059/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: data,
-            timeout: 1000 * 60
-        }, (err, res, body) => {
-            console.log(body);
-
-            if (err) reject(err)
-            else resolve(body)
-        })
+        }).then(res => resolve(res.text())).catch(err => reject(err))
     })
 }
