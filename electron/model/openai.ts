@@ -49,7 +49,6 @@ export async function GegArticleContent(apiKey: string, prompt: string, model: s
             break;
     }
 
-
     const data = JSON.stringify({
         "model": "gpt-3.5-turbo",
         "messages": messages,
@@ -71,28 +70,10 @@ export async function GegArticleContent(apiKey: string, prompt: string, model: s
         }).then(res => resolve(res.text())).catch(err => reject(err))
     })
 
-    // request({
-    //     url: 'https://api.openai.com/v1/chat/completions',
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Authorization': `Bearer ${apiKey}`,
-    //     },
-    //     proxy: proxy, // 使用代理服务器
-    //     body: data
-    // }, (err, res, body) => {
-    //     if (err) {
-    //         callback(err, null);
-    //     } else {
-    //         callback(null, body);
-    //     }
-    // })
 }
 
 
 export async function GetData(apiKey: string, prompt: string, model: string = '1', temperature: number = 0, max_tokens: number = 7) {
-
-
     const data = JSON.stringify({
         apiKey, prompt, model, temperature, max_tokens
     })

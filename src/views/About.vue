@@ -3,8 +3,12 @@ import { ref } from "vue";
 import { marked } from 'marked';
 import 'github-markdown-css/github-markdown-dark.css'
 
+
+
 marked.setOptions({
     breaks: true,
+    // 开启http解析
+    sanitize: false,
 })
 let readme = ref('')
 // 浏览器读取 /public/EADME.md
