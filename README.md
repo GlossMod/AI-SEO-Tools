@@ -1,6 +1,6 @@
 # 智能SEO助手
 > 作者: 小莫
-> 版本：1.0.2
+> 版本：1.0.3
 > 开源地址：[GitHub](https://github.com/GlossMod/AI-SEO-Tools) | 更新地址：[小莫的博客园](https://blog.aoe.top/tools/620)
 
 ### 介绍

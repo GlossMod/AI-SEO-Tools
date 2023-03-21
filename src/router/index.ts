@@ -18,6 +18,12 @@ const router = createRouter({
             name: "About",
             component: () => import("@src/views/About.vue"),
         },
+        {
+            // 捐助我
+            path: "/donate",
+            name: "Donate",
+            component: () => import("@src/views/Donate.vue"),
+        }
     ]
 });
 

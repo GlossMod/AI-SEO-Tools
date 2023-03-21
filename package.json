@@ -1,6 +1,6 @@
 {
-  "name": "seo_ai_tools",
-  "version": "1.0.2",
+  "name": "ai_seo_tools",
+  "version": "1.0.3",
   "main": "dist-electron/main/index.js",
   "description": "Really simple Electron + Vue + Vite boilerplate.",
   "author": "小莫 <www.aoe.top>",

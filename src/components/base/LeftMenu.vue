@@ -30,6 +30,12 @@ import {
                     </el-icon>
                     <span>关于</span>
                 </el-menu-item>
+                <el-menu-item index="/donate">
+                    <el-icon>
+                        <Sugar />
+                    </el-icon>
+                    <span>投食</span>
+                </el-menu-item>
             </el-menu>
         </el-col>
     </el-row>
