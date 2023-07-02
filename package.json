@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^2.0.10",
-    "@types/marked": "^4.0.8",
+    "@types/marked": "^5.0.0",
     "@types/request": "^2.48.8",
     "@vitejs/plugin-vue": "^4.0.0",
     "electron": "^25.2.0",
