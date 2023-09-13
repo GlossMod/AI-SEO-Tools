@@ -45,7 +45,7 @@
     "delayed-stream": "^1.0.0",
     "electron-request": "^1.8.3",
     "element-plus": "^2.2.29",
-    "esbuild": "^0.17.11",
+    "esbuild": "^0.19.2",
     "extend": "^3.0.2",
     "follow-redirects": "^1.15.2",
     "form-data": "^4.0.0",
