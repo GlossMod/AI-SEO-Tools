@@ -31,7 +31,7 @@
     "marked": "^9.0.0",
     "pinia": "^2.0.30",
     "typescript": "^5.0.2",
-    "vite": "^4.0.4",
+    "vite": "^5.0.4",
      "vite-plugin-electron": "^0.14.0",
     "vite-plugin-electron-renderer": "^0.14.5",
     "vue": "^3.2.45",
